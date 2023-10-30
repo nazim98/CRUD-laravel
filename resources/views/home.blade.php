@@ -27,10 +27,10 @@
     <div style="border: 3px solid black;">
         <h2>All Posts</h2>
         @foreach($posts as $post)
-        <div style="background-color: grey; padding: 10px; margin: 10px;>
+        <div style="background-color: grey; padding: 10px; margin: 10px;">
         <h3>{{$post['title']}} by {{$post->user->name}}</h3>
         {{$post['body']}}
-        <p><a href="/edit-post/{{ $post->id }}">Edit</a></p>
+        <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
         <form action="/delete-post/{{$post->id}}" method="POST">
         @csrf
         @method('DELETE')
